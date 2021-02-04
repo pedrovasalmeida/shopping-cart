@@ -1,0 +1,48 @@
+[
+  {
+    "title": "Produto 1",
+    "description": "Descrição do produto 1, muito bom!",
+    "price": 59.9,
+    "hasPromotion": false
+  },
+  {
+    "title": "Produto 2",
+    "description": "Descrição do produto 2, excelente!",
+    "price": 125,
+    "hasPromotion": false
+  },
+  {
+    "title": "Produto 3",
+    "description": "Descrição do produto 3, supimpa!",
+    "price": 49.9,
+    "hasPromotion": true,
+    "realPrice": 89.9
+  },
+  {
+    "title": "Produto 4",
+    "description": "Descrição do produto 4, eureka!",
+    "price": 49.9,
+    "hasPromotion": true,
+    "realPrice": 89.9
+  },
+  {
+    "title": "Produto 5",
+    "description": "Descrição do produto 5, maravilhoso!",
+    "price": 39.9,
+    "hasPromotion": true,
+    "realPrice": 99.9
+  },
+  {
+    "title": "Produto 6",
+    "description": "Descrição do produto 6, show!",
+    "price": 49.9,
+    "hasPromotion": false
+  },
+  {
+    "title": "Produto 7",
+    "description": "Descrição do produto 7, vapo!",
+    "price": 199.9,
+    "hasPromotion": true,
+    "realPrice": 312.8
+  }
+]
