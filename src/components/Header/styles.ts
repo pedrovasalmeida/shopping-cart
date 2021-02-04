@@ -23,23 +23,38 @@ export const HeaderDiv = styled.div`
   justify-content: space-around;
 
   height: 100%;
-  width: 90%;
+  width: 100%;
 `;
 
 export const LogoDiv = styled.div`
   display: flex;
-  justify-self: flex-start;
+  align-items: center;
+  justify-content: center;
+
+  padding-left: 50px;
+
+  height: 100%;
+  max-width: 50%;
 
   span {
     font-weight: bold;
     color: #333;
+  }
+
+  @media only screen and (max-width: 670px) {
+    padding-left: 0;
   }
 `;
 
 export const ButtonsDiv = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+
+  margin-right: 50px;
+
+  height: 100%;
+  max-width: 100%;
 `;
 
 export const Button = styled.span`
@@ -62,6 +77,10 @@ export const Button = styled.span`
 
   &:hover {
     color: purple;
+  }
+
+  @media only screen and (max-width: 608px) {
+    padding: 0 10px;
   }
 `;
 

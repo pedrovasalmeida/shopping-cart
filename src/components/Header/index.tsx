@@ -28,7 +28,6 @@ const Header: React.FC = () => {
         <ButtonsDiv>
           <Button>Inicio</Button>
           <Button>Sobre</Button>
-          <Button>NotFound</Button>
         </ButtonsDiv>
       </HeaderDiv>
 
