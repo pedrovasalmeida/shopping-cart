@@ -2,12 +2,24 @@
 import React from 'react';
 
 /** Componentes Personalizados */
-import { Container } from './styles';
+import ProductCard from '../../components/ProductCard';
+import Products from '../../productData.json';
+import { Container, ProductsDiv } from './styles';
 
 const Home: React.FC = () => {
   return (
     <Container>
-      <span>Home Page</span>
+      <ProductsDiv>
+        {Products.map(prod => (
+          <ProductCard
+            title={prod.title}
+            description={prod.description}
+            price={prod.price}
+            hasPromotion={prod.hasPromotion}
+            realPrice={prod.realPrice}
+          />
+        ))}
+      </ProductsDiv>
     </Container>
   );
 };
