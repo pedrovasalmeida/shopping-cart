@@ -2,6 +2,8 @@ import styled, { css } from 'styled-components';
 
 import { FiPlusSquare, FiMinusSquare } from 'react-icons/fi';
 
+import { CgRemove } from 'react-icons/cg';
+
 interface CartProps {
   showCart: boolean;
 }
@@ -31,14 +33,24 @@ export const ProductsCart = styled.div<CartProps>`
   border-top: 0;
 
   width: 500px;
-  height: 400px;
+  min-height: 100px;
+  height: auto;
+  max-height: 500px;
 
   transition: opacity 300ms ease;
   z-index: 2;
 
+  overflow-y: scroll;
+
   ::-webkit-scrollbar {
     display: none;
   }
+`;
+
+export const ProductsDiv = styled.div`
+  overflow-y: scroll;
+
+  height: 100%;
 `;
 
 export const CartProduct = styled.div`
@@ -57,12 +69,16 @@ export const CartProduct = styled.div`
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 
+  :last-child {
+    border-bottom: 0;
+  }
+
   background: #eee;
 `;
 
 export const Image = styled.div`
   height: 100%;
-  width: 50px;
+  width: 70px;
 
   background: purple;
 
@@ -84,16 +100,34 @@ export const Title = styled.p`
   margin: 6px 0;
 `;
 
+export const CartTitle = styled.p`
+  font-weight: bold;
+  font-size: 20px;
+
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+
+  color: #333;
+
+  margin: 3px 0;
+  padding: 8px;
+
+  border-bottom: 1px solid #333;
+`;
+
 export const QuantityDiv = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
-export const Quantity = styled.input`
+export const Quantity = styled.span`
   font-size: 18px;
 
-  width: 20px;
+  width: 30px;
+
+  text-align: center;
 
   padding: 0 4px;
   margin: 0 4px;
@@ -117,21 +151,33 @@ export const Price = styled.span`
   }
 `;
 
-export const Increment = styled(FiPlusSquare)``;
+export const Increment = styled(FiPlusSquare)`
+  cursor: pointer;
+`;
 
-export const Decrement = styled(FiMinusSquare)``;
+export const Decrement = styled(FiMinusSquare)`
+  cursor: pointer;
+`;
+
+export const RemoveIcon = styled(CgRemove)`
+  cursor: pointer;
+
+  color: red;
+
+  margin-left: 4px;
+`;
 
 export const TotalDiv = styled.div`
-  position: absolute;
-  bottom: 10px;
-
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid #333;
 
   width: 100%;
+  height: 50px;
 
+  border-top: 1px solid #333;
   padding: 2px 8px;
+  padding-top: 8px;
+
   span {
     color: #333;
     font-weight: bold;
@@ -142,5 +188,21 @@ export const TotalDiv = styled.div`
     color: purple;
     font-weight: bold;
     font-size: 18px;
+  }
+`;
+
+export const EmptyCartMessage = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 10px;
+
+  height: 90%;
+
+  span {
+    color: #333;
+    font-weight: bold;
+    font-size: 22px;
   }
 `;
