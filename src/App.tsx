@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 /** Components */
 import Routes from './routes';
+import Header from './components/Header';
 
 /** Global Styles */
 import GlobalStyles from './styles/global';
@@ -13,6 +14,7 @@ const App: React.FC = () => {
     <>
       <GlobalStyles />
 
+      <Header />
       <Router>
         <Routes />
       </Router>
