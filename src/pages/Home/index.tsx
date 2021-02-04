@@ -4,6 +4,7 @@ import React from 'react';
 /** Componentes Personalizados */
 import ProductCard from '../../components/ProductCard';
 import Products from '../../productData.json';
+
 import { Container, ProductsDiv } from './styles';
 
 const Home: React.FC = () => {
@@ -12,6 +13,7 @@ const Home: React.FC = () => {
       <ProductsDiv>
         {Products.map(prod => (
           <ProductCard
+            id={prod.id}
             title={prod.title}
             description={prod.description}
             price={prod.price}

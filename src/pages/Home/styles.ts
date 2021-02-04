@@ -8,7 +8,7 @@ export const Container = styled.div`
   justify-content: center;
 
   max-width: 100vw;
-  height: 100vh;
+  min-height: calc(100vh - 50px);
 
   padding: 0 50px;
 
@@ -22,5 +22,9 @@ export const ProductsDiv = styled.div`
   align-items: center;
   justify-content: center;
 
-  width: 50%;
+  width: 80vw;
+
+  @media only screen and (max-width: 540px) {
+    width: 100vw;
+  }
 `;
