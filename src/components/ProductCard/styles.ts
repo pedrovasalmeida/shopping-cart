@@ -72,7 +72,7 @@ export const Price = styled.span`
   }
 `;
 
-export const Button = styled.input`
+export const Button = styled.button`
   position: relative;
   display: flex;
   align-items: center;

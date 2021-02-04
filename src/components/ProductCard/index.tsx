@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import { useCart } from '../../context/CartContext';
+
 import {
   Product,
   Image,
@@ -11,26 +13,28 @@ import {
 } from './styles';
 
 interface ProductProps {
+  id: number;
   title: string;
   description: string;
-  price: Number;
+  price: number;
   hasPromotion: boolean;
-  realPrice?: Number;
+  realPrice?: number;
 }
 
 const ProductCard: React.FC<ProductProps> = (
-  { title, description, price, hasPromotion = false, realPrice }: ProductProps,
+  {
+    id,
+    title,
+    description,
+    price,
+    hasPromotion = false,
+    realPrice,
+  }: ProductProps,
   ...rest
 ) => {
-  const [showMessage, setShowMessage] = useState(false);
+  const { addToCart } = useCart();
 
-  const handleBuy = () => {
-    setShowMessage(true);
-
-    setTimeout(() => {
-      setShowMessage(false);
-    }, 1000);
-  };
+  const product = { id, title, price, quantity: 1 };
 
   return (
     <Product>
@@ -41,8 +45,9 @@ const ProductCard: React.FC<ProductProps> = (
         R$ {price.toFixed(2)}
         <>{hasPromotion && <strong>R$ {realPrice?.toFixed(2)}</strong>}</>
       </Price>
-      <Button type="button" onClick={handleBuy} value="Comprar" />
-      {showMessage && <span>Adicionado ao carrinho!</span>}
+      <Button type="button" onClick={() => addToCart(product)}>
+        <span>Comprar</span>
+      </Button>
     </Product>
   );
 };
