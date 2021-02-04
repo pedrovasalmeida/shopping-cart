@@ -2,7 +2,15 @@ import React, { useState } from 'react';
 
 import ProductsCart from '../ProductCart';
 
-import { Container, ButtonsDiv, Button, Cart, CartProduct } from './styles';
+import {
+  Container,
+  HeaderDiv,
+  LogoDiv,
+  ButtonsDiv,
+  Button,
+  Cart,
+  CartProduct,
+} from './styles';
 
 const Header: React.FC = () => {
   const [showCart, setShowCart] = useState(false);
@@ -13,11 +21,17 @@ const Header: React.FC = () => {
 
   return (
     <Container>
-      <ButtonsDiv>
-        <Button>Inicio</Button>
-        <Button>Sobre</Button>
-        <Button>NotFound</Button>
-      </ButtonsDiv>
+      <HeaderDiv>
+        <LogoDiv>
+          <span>Shopping Cart ™</span>
+        </LogoDiv>
+
+        <ButtonsDiv>
+          <Button>Inicio</Button>
+          <Button>Sobre</Button>
+          <Button>NotFound</Button>
+        </ButtonsDiv>
+      </HeaderDiv>
 
       <Cart size={30} onClick={handleOpenCart} />
 

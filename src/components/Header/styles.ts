@@ -10,12 +10,30 @@ export const Container = styled.nav`
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
 
   height: 50px;
 
   border-bottom: 1px solid #333;
   background: #eee;
+`;
+
+export const HeaderDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  height: 100%;
+  width: 90%;
+`;
+
+export const LogoDiv = styled.div`
+  display: flex;
+  justify-self: flex-start;
+
+  span {
+    font-weight: bold;
+    color: #333;
+  }
 `;
 
 export const ButtonsDiv = styled.div`
@@ -30,7 +48,7 @@ export const Button = styled.span`
   font-weight: bold;
   font-size: 18px;
 
-  padding: 0 8px;
+  padding: 0 32px;
 
   line-height: 18px;
 
@@ -54,6 +72,12 @@ export const Cart = styled(TiShoppingCart)`
   border-radius: 50%;
 
   cursor: pointer;
+  color: #333;
+
+  transition: color 300ms ease;
+  &:hover {
+    color: purple;
+  }
 `;
 
 export const ProductsCart = styled.div<CartProps>`
