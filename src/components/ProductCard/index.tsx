@@ -1,16 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import { useCart } from '../../context/CartContext';
 
-import {
-  Product,
-  Image,
-  Title,
-  Description,
-  Price,
-  Button,
-  CartIcon,
-} from './styles';
+import { Product, Image, Title, Description, Price, Button } from './styles';
 
 interface ProductProps {
   id: number;
@@ -21,17 +13,14 @@ interface ProductProps {
   realPrice?: number;
 }
 
-const ProductCard: React.FC<ProductProps> = (
-  {
-    id,
-    title,
-    description,
-    price,
-    hasPromotion = false,
-    realPrice,
-  }: ProductProps,
-  ...rest
-) => {
+const ProductCard: React.FC<ProductProps> = ({
+  id,
+  title,
+  description,
+  price,
+  hasPromotion = false,
+  realPrice,
+}: ProductProps) => {
   const { addToCart } = useCart();
 
   const product = { id, title, price, quantity: 1 };

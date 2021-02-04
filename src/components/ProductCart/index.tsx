@@ -23,10 +23,7 @@ interface ProductProps {
   showCart: boolean;
 }
 
-const ProductCart: React.FC<ProductProps> = (
-  { showCart }: ProductProps,
-  ...rest
-) => {
+const ProductCart: React.FC<ProductProps> = ({ showCart }: ProductProps) => {
   const {
     removeFromCart,
     increment,

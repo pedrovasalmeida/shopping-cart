@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { lighten, shade } from 'polished';
+import { lighten } from 'polished';
 import { TiShoppingCart } from 'react-icons/ti';
 
 export const Product = styled.div`

@@ -9,7 +9,6 @@ import {
   ButtonsDiv,
   Button,
   Cart,
-  CartProduct,
 } from './styles';
 
 const Header: React.FC = () => {
