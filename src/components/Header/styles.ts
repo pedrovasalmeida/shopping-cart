@@ -39,6 +39,10 @@ export const LogoDiv = styled.div`
   span {
     font-weight: bold;
     color: #333;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   @media only screen and (max-width: 670px) {

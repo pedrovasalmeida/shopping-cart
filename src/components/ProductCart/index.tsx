@@ -6,6 +6,7 @@ import {
   ProductsCart,
   ProductsDiv,
   CartProduct,
+  DetailsDiv,
   Title,
   CartTitle,
   Price,
@@ -45,10 +46,12 @@ const ProductCart: React.FC<ProductProps> = ({ showCart }: ProductProps) => {
           <>
             {products.map(prod => (
               <CartProduct>
-                <RemoveIcon size={20} onClick={() => removeFromCart(prod.id)} />
-                <Image />
-                <Title>{prod.title}</Title>
-                <Price>R$ {prod.price.toFixed(2)}</Price>
+                <RemoveIcon size={22} onClick={() => removeFromCart(prod.id)} />
+                <DetailsDiv>
+                  <Image />
+                  <Title>{prod.title}</Title>
+                  <Price>R$ {prod.price.toFixed(2)}</Price>
+                </DetailsDiv>
                 <QuantityDiv>
                   <Increment size={20} onClick={() => increment(prod.id)} />
                   <Quantity>{prod.quantity}</Quantity>

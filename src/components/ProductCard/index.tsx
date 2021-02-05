@@ -37,6 +37,9 @@ const ProductCard: React.FC<ProductProps> = ({
       <Button type="button" onClick={() => addToCart(product)}>
         <span>Comprar</span>
       </Button>
+      <Button type="button">
+        <span>Detalhes</span>
+      </Button>
     </Product>
   );
 };

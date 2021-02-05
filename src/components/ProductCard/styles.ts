@@ -8,13 +8,13 @@ export const Product = styled.div`
   align-items: center;
   justify-content: center;
 
-  height: 300px;
+  min-height: 300px;
   width: 200px;
 
   border: 2px solid #333;
   border-radius: 8px;
 
-  padding: 0 10px;
+  padding: 10px;
   margin: 4px 8px;
 
   background: linear-gradient(#fff, #ccc);
@@ -48,6 +48,13 @@ export const Title = styled.p`
   color: #333;
 
   margin: 6px 0;
+  padding: 0 8px;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  max-width: 200px;
 `;
 
 export const Description = styled.span`
@@ -84,13 +91,14 @@ export const Button = styled.button`
   padding: 2px 0;
 
   border-radius: 8px;
-  border: 1px solid #eee;
+  border: 2px solid #eee;
 
-  transition: background 300ms ease;
+  transition: background 300ms ease, border 300ms ease;
   cursor: pointer;
 
   &:hover {
     background: ${lighten(0.1, '#eee')};
+    border: 2px solid purple;
   }
 `;
 

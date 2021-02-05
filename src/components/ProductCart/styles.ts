@@ -27,6 +27,8 @@ export const ProductsCart = styled.div<CartProps>`
   flex-direction: column;
 
   border-radius: 8px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 
   background: #eee;
   border: 1px solid #333;
@@ -45,6 +47,12 @@ export const ProductsCart = styled.div<CartProps>`
   ::-webkit-scrollbar {
     display: none;
   }
+
+  @media only screen and (max-width: 512px) {
+    right: 5px;
+    left: 5px;
+    width: auto;
+  }
 `;
 
 export const ProductsDiv = styled.div`
@@ -59,7 +67,7 @@ export const CartProduct = styled.div`
   justify-content: space-between;
 
   width: 100%;
-  height: 50px;
+  height: 80px;
 
   padding: 6px 8px;
   margin-bottom: 8px;
@@ -69,16 +77,37 @@ export const CartProduct = styled.div`
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 
+  background: #eee;
+
   :last-child {
     border-bottom: 0;
   }
 
-  background: #eee;
+  @media only screen and (max-width: 500px) {
+    height: auto;
+  }
+`;
+
+export const DetailsDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 70px;
+
+  margin-left: 6px;
+
+  @media only screen and (max-width: 390px) {
+    width: 70%;
+  }
 `;
 
 export const Image = styled.div`
-  height: 100%;
-  width: 70px;
+  height: 50px;
+  width: 50px;
+
+  margin-right: 6px;
 
   background: purple;
 
@@ -98,6 +127,20 @@ export const Title = styled.p`
   color: #333;
 
   margin: 6px 0;
+
+  max-width: 200px;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  @media only screen and (max-width: 452px) {
+    width: 150px;
+  }
+
+  @media only screen and (max-width: 406px) {
+    font-size: 16px;
+  }
 `;
 
 export const CartTitle = styled.p`
@@ -125,8 +168,6 @@ export const QuantityDiv = styled.div`
 export const Quantity = styled.span`
   font-size: 18px;
 
-  width: 30px;
-
   text-align: center;
 
   padding: 0 4px;
@@ -142,12 +183,10 @@ export const Price = styled.span`
   font-size: 20px;
   color: purple;
 
-  strong {
-    font-size: 14px;
-    margin-left: 4px;
-    color: #666;
-    text-decoration: line-through;
-    text-decoration-color: #333;
+  margin-right: 16px;
+
+  @media only screen and (max-width: 406px) {
+    font-size: 16px;
   }
 `;
 

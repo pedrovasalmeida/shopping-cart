@@ -18,16 +18,22 @@ const Header: React.FC = () => {
     setShowCart(!showCart);
   };
 
+  const handleOpenLink = (social: 'github' | 'linkedin') => {
+    if (social === 'github') window.open('https://github.com/pedrovasalmeida');
+    if (social === 'linkedin')
+      window.open('https://www.linkedin.com/in/pedrovasalmeida/');
+  };
+
   return (
     <Container>
       <HeaderDiv>
         <LogoDiv>
-          <span>Shopping Cart ™</span>
+          <span>Pedro H.V.A.</span>
         </LogoDiv>
 
         <ButtonsDiv>
-          <Button>Inicio</Button>
-          <Button>Sobre</Button>
+          <Button onClick={() => handleOpenLink('github')}>GitHub</Button>
+          <Button onClick={() => handleOpenLink('linkedin')}>LinkedIn</Button>
         </ButtonsDiv>
       </HeaderDiv>
 
