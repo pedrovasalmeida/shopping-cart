@@ -1,21 +1,21 @@
 [
   {
     "id": 1,
-    "title": "Produto 1",
+    "title": "Gigabyte RTX 3060 Ti 12GB",
     "description": "Descrição do produto 1, muito bom!",
     "price": 59.9,
     "hasPromotion": false
   },
   {
     "id": 2,
-    "title": "Produto 2",
+    "title": "Tênis Nike Revolution 5",
     "description": "Descrição do produto 2, excelente!",
     "price": 125,
     "hasPromotion": false
   },
   {
     "id": 3,
-    "title": "Produto 3",
+    "title": "Placa-mãe ASUS TUF X99 Gaming BR",
     "description": "Descrição do produto 3, supimpa!",
     "price": 49.9,
     "hasPromotion": true,
@@ -23,7 +23,7 @@
   },
   {
     "id": 4,
-    "title": "Produto 4",
+    "title": "Smartwatch Xiaomi Amazfit Bip",
     "description": "Descrição do produto 4, eureka!",
     "price": 49.9,
     "hasPromotion": true,
@@ -31,7 +31,7 @@
   },
   {
     "id": 5,
-    "title": "Produto 5",
+    "title": "Amazon Echo-dot",
     "description": "Descrição do produto 5, maravilhoso!",
     "price": 39.9,
     "hasPromotion": true,
@@ -39,14 +39,14 @@
   },
   {
     "id": 6,
-    "title": "Produto 6",
+    "title": "Headset Logitech G533",
     "description": "Descrição do produto 6, show!",
     "price": 49.9,
     "hasPromotion": false
   },
   {
     "id": 7,
-    "title": "Produto 7",
+    "title": "HyperX Cloud Orbit S",
     "description": "Descrição do produto 7, vapo!",
     "price": 199.9,
     "hasPromotion": true,
