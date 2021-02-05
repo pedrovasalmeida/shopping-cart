@@ -16,7 +16,6 @@ interface CartContext {
   decrement(id: number): void;
   products: Product[];
   getTotalCartPrice: () => number;
-  showToast: 'success' | 'error' | undefined;
 }
 
 interface Product {
@@ -29,13 +28,9 @@ interface Product {
 const CartContext = createContext({} as CartContext);
 
 const CartProvider: React.FC = ({ children }) => {
-  const [products, setProducts] = useState<Product[]>([]);
-
-  const [showToast, setShowToast] = useState<'success' | 'error' | undefined>(
-    undefined,
-  );
-
   const { addToast } = useToasts();
+
+  const [products, setProducts] = useState<Product[]>([]);
 
   /** pega os produtos já salvos no carrinho anteriormente */
   useEffect(() => {
@@ -51,10 +46,15 @@ const CartProvider: React.FC = ({ children }) => {
   }, []);
 
   const addToCart = useCallback(
-    (product: Product) => {
+    async (product: Product) => {
       const isProductExists = products.filter(prod => prod.id === product.id);
 
       if (isProductExists.length < 1) {
+        addToast(`${product.title} adicionado ao carrinho!`, {
+          appearance: 'success',
+          autoDismiss: true,
+        });
+
         const newProductsList = [...products, { ...product, quantity: 1 }];
 
         setProducts(newProductsList);
@@ -70,10 +70,13 @@ const CartProvider: React.FC = ({ children }) => {
             : prod,
         );
 
-        addToast(`${isProductExists[0].title} adicionado ao carrinho!`, {
-          appearance: 'success',
-          autoDismiss: true,
-        });
+        addToast(
+          `${isProductExists[0].title} adicionado novamente ao carrinho!`,
+          {
+            appearance: 'success',
+            autoDismiss: true,
+          },
+        );
 
         setProducts(newProductList);
         localStorage.setItem(
@@ -122,9 +125,10 @@ const CartProvider: React.FC = ({ children }) => {
 
   const removeFromCart = useCallback(
     id => {
+      const product = products.find(prod => prod.id === id);
       const newProductsList = products.filter(prod => prod.id !== id);
 
-      addToast(`Item removido do carrinho!`, {
+      addToast(`${product ? product.title : 'Item'} removido do carrinho!`, {
         appearance: 'warning',
         autoDismiss: true,
       });
@@ -158,7 +162,6 @@ const CartProvider: React.FC = ({ children }) => {
       decrement,
       products,
       getTotalCartPrice,
-      showToast,
     }),
     [
       addToCart,
@@ -167,7 +170,6 @@ const CartProvider: React.FC = ({ children }) => {
       decrement,
       products,
       getTotalCartPrice,
-      showToast,
     ],
   );
 
