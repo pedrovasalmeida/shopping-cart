@@ -7,6 +7,8 @@ import React, {
   useMemo,
 } from 'react';
 
+import { useToasts } from 'react-toast-notifications';
+
 interface CartContext {
   addToCart(product: Product): void;
   removeFromCart(id: number): void;
@@ -14,6 +16,7 @@ interface CartContext {
   decrement(id: number): void;
   products: Product[];
   getTotalCartPrice: () => number;
+  showToast: 'success' | 'error' | undefined;
 }
 
 interface Product {
@@ -27,6 +30,12 @@ const CartContext = createContext({} as CartContext);
 
 const CartProvider: React.FC = ({ children }) => {
   const [products, setProducts] = useState<Product[]>([]);
+
+  const [showToast, setShowToast] = useState<'success' | 'error' | undefined>(
+    undefined,
+  );
+
+  const { addToast } = useToasts();
 
   /** pega os produtos já salvos no carrinho anteriormente */
   useEffect(() => {
@@ -60,6 +69,11 @@ const CartProvider: React.FC = ({ children }) => {
             ? { ...prod, quantity: prod.quantity + 1 }
             : prod,
         );
+
+        addToast(`${isProductExists[0].title} adicionado ao carrinho!`, {
+          appearance: 'success',
+          autoDismiss: true,
+        });
 
         setProducts(newProductList);
         localStorage.setItem(
@@ -110,6 +124,11 @@ const CartProvider: React.FC = ({ children }) => {
     id => {
       const newProductsList = products.filter(prod => prod.id !== id);
 
+      addToast(`Item removido do carrinho!`, {
+        appearance: 'warning',
+        autoDismiss: true,
+      });
+
       setProducts(newProductsList);
 
       localStorage.setItem(
@@ -139,6 +158,7 @@ const CartProvider: React.FC = ({ children }) => {
       decrement,
       products,
       getTotalCartPrice,
+      showToast,
     }),
     [
       addToCart,
@@ -147,6 +167,7 @@ const CartProvider: React.FC = ({ children }) => {
       decrement,
       products,
       getTotalCartPrice,
+      showToast,
     ],
   );
 
