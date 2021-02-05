@@ -2,9 +2,9 @@
 
 ![Shopping Cart](https://i.imgur.com/KnqvwRZ.gif)
 
-Um projeto que implementa um carrinho de compras utilizando a ContextAPI.
+A project to implements a shopping cart using ContextAPI from React.
 
-Algumas tecnologias utilizadas:
+Tech:
 - [**ReactJS**](https://pt-br.reactjs.org/);
 - [**ContextAPI**](https://pt-br.reactjs.org/docs/context.html);
 - [**TypeScript**](https://www.typescriptlang.org/);
