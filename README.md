@@ -12,3 +12,7 @@ Tech:
 - [**React Toast Notifications**](https://github.com/jossmac/react-toast-notifications);
 - [**Polished**](https://polished.js.org/)
 - [**Local Storage**](https://developer.mozilla.org/pt-BR/docs/Web/API/Window/Window.localStorage);
+
+---
+
+Veja o preview do projeto [**clicando aqui: Shopping Cart**](https://ph-shopping-cart.vercel.app/).
